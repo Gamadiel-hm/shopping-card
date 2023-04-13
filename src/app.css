@@ -60,5 +60,27 @@ body{
 .search label {
   color: #fff;
   font-family: sans-serif;
-  font-size: 1.2rem;
+  font-size: 1rem;
+}
+
+.search input {
+  font-size: .75rem;
+  outline: none;
+  border-radius: .5rem;
+  background-color: #250606;
+  color: #ffffffe0;
+}
+
+.search button {
+  padding: .2rem 2rem;
+  background-color: #250606;
+  color: #ccc1c1;
+  border-radius: .35rem;
+  font-size: .95rem;
+}
+
+.search button:hover {
+  background-color: #413737;
+  color: #fff;
+  transition: background-color .4s, color cubic-bezier(0.95, 0.05, 0.795, 0.035);
 }
