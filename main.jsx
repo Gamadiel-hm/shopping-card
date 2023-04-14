@@ -1,9 +1,9 @@
 import { createRoot } from 'react-dom/client';
-import React from 'react';
 import App from './src/App';
+import { FilterProvider } from './src/context/filters';
 
 createRoot(document.getElementById('app')).render(
-  <React.StrictMode>
+  <FilterProvider>
     <App />
-  </React.StrictMode>
+  </FilterProvider>
 );
