@@ -1,20 +1,14 @@
 import { useId } from 'react';
+import useFilterContext from '../hooks/useFilterContext';
 
 export default function Header({ setFilter, products }) {
   const idPrice = useId();
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const dataForm = new FormData(e.target);
-
-    const dateFilter = products.filter(fil => fil.price >= dataForm.get('price'));
-    setFilter(dateFilter);
-  };
+  const { filterProducts } = useFilterContext();
 
   return (
     <header>
       <h2>Shopping card</h2>
-      <form className='search' onSubmit={handleSubmit}>
+      <form className='search' onSubmit={filterProducts}>
         <label htmlFor={idPrice}>Precio minimo</label>
         <input type="text" id={idPrice} placeholder='min precio' name='price' />
         <button type='submit'>Search</button>
